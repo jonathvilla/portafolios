@@ -1,95 +1,115 @@
+// import React from 'react';
+// import './Home.css';
+// import Typewriter from 'typewriter-effect';
+// import avatar from '../../assets/avatar.jpg'; // Asegúrate de que esta ruta es correcta
+// import { Link } from "react-router-dom";
+// import Footer from "../../components/Footer/Footer";
 
-import React, { useEffect } from "react"; // Añadido useEffect aquí 
-import Header from "../../components/Header/Header";
-import Button from "../../components/Button/Button";
-import Typewriter from "typewriter-effect";
-import "./Home.css";
-// Si no tienes imagen, puedes usar un placeholder o eliminar esta línea
-// import yourPhoto from "../../assets/your-photo.jpg";
+// const Home = () => {
+//   return (
+//     <section className="home" id="home">
+//       <div className="particles-container">
+//         {/* Aquí podrías integrar tsParticles más adelante */}
+//       </div>
+
+//       <div className="hero">
+//         <div className="hero__content">
+//           <img src={avatar} alt="Avatar" className="hero__avatar" />
+
+//           <h1 className="hero__title">
+//             <Typewriter
+//               options={{
+//                 strings: [
+//                   "Hola, soy El Jonath mercado",
+//                   "Desarrollador Full Stack",
+//                   "Bienvenido a mi portafolio",
+//                 ],
+//                 autoStart: true,
+//                 loop: true,
+//                 delay: 50,
+//                 deleteSpeed: 40,
+//               }}
+//             />
+//           </h1>
+
+//           <p className="hero__description">
+//             Desarrollador apasionado por la innovación digital, la inteligencia artificial y las soluciones modernas.
+//           </p>
+
+//           <div className="hero__buttons">
+//              <Link to="/proyectos" className="fancy-button">Ver proyectos</Link>
+//              <Link to="/contacto" className="fancy-button">Contáctame</Link>
+//              <Link to="/proyectos" className="fancy-button">Ver proyectos</Link>
+//              <Link to="/contacto" className="fancy-button">Contáctame</Link>
+//           </div>
+//         </div>
+//       </div>
+
+//       <div className="tech-icons">
+//         <span title="React">⚛️</span>
+//         <span title="JavaScript">💻</span>
+//         <span title="Node.js">🚀</span>
+//       </div>
+//       <Footer />
+//     </section>
+//   );
+// };
+
+// export default Home;
+
+import React from 'react';
+import './Home.css';
+import Typewriter from 'typewriter-effect';
+import avatar from '../../assets/avatar.jpg';
+import { Link } from "react-router-dom";
+import Layout from "../../components/Layout/Layout"; // Asegúrate de usar esta ruta correctamente
 
 const Home = () => {
-  useEffect(() => {
-    // Cargar particles.js solo si existe en window
-    if (typeof window !== "undefined" && window.particlesJS) {
-      window.particlesJS("particles-js", {
-        particles: {
-          number: { value: 80, density: { enable: true, value_area: 800 } },
-          color: { value: "#ffffff" },
-          shape: { type: "circle" },
-          opacity: { random: true, value: 0.5 },
-          size: { random: true, value: 3 },
-          line_linked: { 
-            enable: true, 
-            distance: 150, 
-            color: "#ffffff", 
-            opacity: 0.4, 
-            width: 1 
-          },
-          move: { enable: true, speed: 2 }
-        }
-      });
-    }
-  }, []);
-
   return (
-    <div className="home">
-      <div id="particles-js" className="particles-container"></div>
-      
-      <Header />
-      
-      <main className="hero">
-        <div className="hero__content">
-          {/* Opcional: Si quieres usar una imagen */}
-          {/* <img 
-            src={yourPhoto || "https://via.placeholder.com/150"} 
-            alt="Tu nombre" 
-            className="hero__avatar" 
-          /> */}
-          
-          <h1 className="hero__title">
-            <Typewriter
-              options={{
-                strings: [
-                  "Hola, soy [Tu Nombre]", 
-                  "Desarrollador Full Stack", 
-                  "Bienvenido a mi portafolio"
-                ],
-                autoStart: true,
-                loop: true,
-              }}
-            />
-          </h1>
-          
-          <p className="hero__description">
-            Creo soluciones digitales con tecnologías modernas como React y Node.js
-          </p>
-          
-          <div className="hero__buttons">
-            <Button 
-              text="Ver proyectos" 
-              onClick={() => {
-                const projectsSection = document.getElementById("projects");
-                if (projectsSection) {
-                  projectsSection.scrollIntoView({ behavior: "smooth" });
-                }
-              }} 
-              className="btn--primary"
-            />
-            <Button 
-              text="Contacto" 
-              onClick={() => window.location.href = "mailto:tu@email.com"} 
-              className="btn--secondary pulse"
-            />
+    <Layout>
+      <section className="home" id="home">
+        <div className="particles-container">
+          {/* Aquí podrías integrar tsParticles más adelante */}
+        </div>
+
+        <div className="hero">
+          <div className="hero__content">
+            <img src={avatar} alt="Avatar" className="hero__avatar" />
+
+            <h1 className="hero__title">
+              <Typewriter
+                options={{
+                  strings: [
+                    "Hola, soy El Jonath mercado",
+                    "Desarrollador Full Stack",
+                    "Bienvenido a mi portafolio",
+                  ],
+                  autoStart: true,
+                  loop: true,
+                  delay: 50,
+                  deleteSpeed: 40,
+                }}
+              />
+            </h1>
+
+            <p className="hero__description">
+              Desarrollador apasionado por la innovación digital, la inteligencia artificial y las soluciones modernas.
+            </p>
+
+            <div className="hero__buttons">
+              <Link to="/proyectos" className="fancy-button">Ver proyectos</Link>
+              <Link to="/contacto" className="fancy-button">Contáctame</Link>
+            </div>
           </div>
         </div>
-      </main>
-      
-      <div className="tech-icons">
-        <span role="img" aria-label="React">⚛️</span>
-        <span role="img" aria-label="JavaScript">💻</span>
-        <span role="img" aria-label="Node">🚀</span>
-      </div>
-    </div>
+
+        <div className="tech-icons">
+          <span title="React">⚛️</span>
+          <span title="JavaScript">💻</span>
+          <span title="Node.js">🚀</span>
+        </div>
+      </section>
+    </Layout>
   );
 };
 

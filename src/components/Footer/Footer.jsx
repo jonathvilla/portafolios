@@ -4,7 +4,7 @@ import "./Footer.css";
 const Footer = () => {
   return (
     <footer className="footer">
-      <p>&copy; 2023 Mi Portafolio</p>
+      <p>© {new Date().getFullYear()} El Propio. Todos los derechos reservados.</p>
     </footer>
   );
 };
