@@ -161,7 +161,7 @@ const Home = () => {
             </div>
 
             <div className="hero__buttons">
-              <Link to="/proyectos" className="fancy-button primary">
+              <Link to="/projects" className="fancy-button primary">
                 <span>🚀 Ver Proyectos</span>
               </Link>
               <button 
